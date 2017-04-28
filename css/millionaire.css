@@ -1,0 +1,83 @@
+body .game{
+    /*background-image: url(../hkust.jpg);
+	background-repeat: no-repeat;
+	background-attachment:fixed;*/
+	background-color: black;
+    height: 700px;
+    width: 500px;
+	
+	/*margin: 10px;*/
+}
+.top {
+	background-image: url(../hkust.jpg);
+	height: 400px;
+    width: 500px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 0px;
+	display: block;
+}
+.bottom{
+	background-color: #4E8BBD;
+	/*background-color: transparent;*/
+	width: 500px;
+	height: 300px;
+	padding: 10px;
+	display: block;
+}
+.tools{
+	background-color: inherit;
+	padding:10px;
+	text-align: left;
+}
+.tools button{
+	width: 70px;
+	height: 50px;
+	background-color:#1BADF8;
+    border: none;
+    color: white;
+    /*padding: 15px 32px;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 5px;
+}
+.choice{
+	width: 400px;
+	background-color:#1BADF8;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.question{
+	width: 450px;
+	height: 90px;
+	/*margin: 15px;*/
+	background-color: hsla(207,48%,52%,1.00);
+	border-radius: 10px;
+	border: 5px solid hsla(0,0%,0%,1.00);
+	vertical-align: bottom;
+}
+.judges{
+	text-align: right;
+	background-color: transparent;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: bottom;
+}
+.progress{
+	background-color: hsla(359,100%,50%,1.00);
+	height: 30px;
+	display: block;
+	margin: 5px;
+}

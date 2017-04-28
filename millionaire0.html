@@ -1,0 +1,89 @@
+#!/usr/local/bin/php
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/millionaire.css">
+</head>
+
+<body>
+    <div class="game">
+        <div class="row">
+            <div class="col col-md-8">
+
+                <div class="screen">
+                    <h2>Do you want to be a millionaire?</h2>
+                </div>
+                <div class="question">
+                    How are you today?
+                </div>
+                <center>
+                    <div class="row">
+                        <div class="col col-md-6">
+                            <button class="choice" id="A">Hello</button>
+                        </div>
+                        <div class="col col-md-6">
+                            <button class="choice" id="B">Goodbye</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-6">
+                            <button class="choice" id="C">GoodNight</button>
+                        </div>
+                        <div class="col col-md-6">
+                            <button class="choice" id="D">GG</button>
+                        </div>
+                    </div>
+                </center>
+
+            </div>
+            <div class="col col-md-4">
+                <div class="menu">
+                    <div class="tools">
+                        <span><button>A</button></span>
+                        <span><button>B</button></span>
+                        <span><button>C</button></span>
+                    </div>
+                    <div class="status">
+                        The amount you earned.<br>
+                        $0. 
+                    </div>
+                    <div class="money">
+                        <ol>
+                            <div class="active">
+                                <li>1,000</li>
+                            </div>
+                            <li>2,000</li>
+                            <li>3,000</li>
+                            <li>4,000</li>
+                            <li class="cutoff">8,000</li>
+                            <li>10,000</li>
+                            <li>20,000</li>
+                            <li>30,000</li>
+                            <li>40,000</li>
+                            <li class="cutoff">60,000</li>
+                            <li>80,000</li>
+                            <li>150,000</li>
+                            <li>250,000</li>
+                            <li>500,000</li>
+                            <li class="cutoff">1,000,000</li>
+                        </ol>
+                        <!--<ul style="list-style-type:none">
+                            <li>15. 1,000,000</li>
+                            <li>14. 500,000</li>
+                            <li>13. 250,000</li>
+                            <li>12. 150,000</li>
+                            <li>11. 80,000</li>
+                            <li>10. 60,000</li>
+                        </ul>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
