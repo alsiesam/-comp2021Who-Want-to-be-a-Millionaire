@@ -1,0 +1,148 @@
+  <?php
+  if(isset($_POST['50'])){ 
+      $msg = "The answer are ";
+      $a=0; $b=0;$c=0;$d=0;
+      if ($choiceA[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+          $a=1;
+      }
+      if ($choiceB[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+          $b=1;
+      }
+      if ($choiceC[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+          $c=1;
+      }
+      if ($choiceD[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+          $d=1;
+      }
+		$choice = array("A","B","C","D");
+		echo "<script> alert(\"There are two possible answer left.\\n\")</script>";
+	  	if($a=1)
+		{
+		array_splice($choice,0,1);
+		$random = rand(0,count($choice)-1);
+		$random_choice = $choice[$random];
+		switch($random_choice)
+		{
+			case "B": echo "<script> alert(\"A: ".$choiceA[$_COOKIE[score]]."\\nB: ".$choiceB[$_COOKIE[score]]."\")</script>"; break;
+			case "C": echo "<script> alert(\"A: ".$choiceA[$_COOKIE[score]]."\\nC: ".$choiceC[$_COOKIE[score]]."\")</script>"; break;
+			case "D": echo "<script> alert(\"A: ".$choiceA[$_COOKIE[score]]."\\nD: ".$choiceD[$_COOKIE[score]]."\")</script>"; break;
+		}
+		}
+		if($b=1)
+		{
+		array_splice($choice,1,1);
+		$random = rand(0,count($choice)-1);
+		$random_choice = $choice[$random];
+		switch($random_choice)
+		{
+			case "A": echo "<script> alert(\"A: ".$choiceA[$_COOKIE[score]]."\\nB: ".$choiceB[$_COOKIE[score]]."\")</script>"; break;
+			case "C": echo "<script> alert(\"B: ".$choiceB[$_COOKIE[score]]."\\nC: ".$choiceC[$_COOKIE[score]]."\")</script>"; break;
+			case "D": echo "<script> alert(\"B: ".$choiceB[$_COOKIE[score]]."\\nD: ".$choiceD[$_COOKIE[score]]."\")</script>"; break;
+		}
+		}
+		if($c=1)
+		{
+		array_splice($choice,2,1);
+		$random = rand(0,count($choice)-1);
+		$random_choice = $choice[$random];
+		switch($random_choice)
+		{
+			case "A": echo "<script> alert(\"A: ".$choiceA[$_COOKIE[score]]."\\nC: ".$choiceC[$_COOKIE[score]]."\")</script>"; break;
+			case "B": echo "<script> alert(\"B: ".$choiceB[$_COOKIE[score]]."\\nC: ".$choiceC[$_COOKIE[score]]."\")</script>"; break;
+			case "D": echo "<script> alert(\"C: ".$choiceC[$_COOKIE[score]]."\\nD: ".$choiceD[$_COOKIE[score]]."\")</script>"; break;
+		}
+		}
+		if($d=1)
+		{
+		array_splice($choice,3,1);
+		$random = rand(0,count($choice)-1);
+		$random_choice = $choice[$random];
+		switch($random_choice)
+		{
+			case "A": echo "<script> alert(\"A: ".$choiceA[$_COOKIE[score]]."\\nD: ".$choiceD[$_COOKIE[score]]."\")</script>"; break;
+			case "B": echo "<script> alert(\"B: ".$choiceB[$_COOKIE[score]]."\\nD: ".$choiceD[$_COOKIE[score]]."\")</script>"; break;
+			case "C": echo "<script> alert(\"C: ".$choiceC[$_COOKIE[score]]."\\nD: ".$choiceD[$_COOKIE[score]]."\")</script>"; break;
+		}
+		}
+	
+  }
+  ?>
+  <?php
+  		$random_prob = rand(30,100);
+		$choice = array("A","B","C","D");
+		if($random_prob > 50){
+			$random2=rand(50,100);
+			if(isset($_POST['friends'])){ 
+			if ($choiceA[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+			echo "<script>alert(\"Friend: I think the answer is A. \\nI am ".$random2."% sure about that.\")</script>";
+			}
+			if ($choiceB[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+			echo "<script>alert(\"Friend: I think the answer is B. \\nI am ".$random2."% sure about that.\")</script>";
+			}
+			if ($choiceC[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+			echo "<script>alert(\"Friend: I think the answer is C. \\nI am ".$random2."% sure about that.\")</script>";
+			}
+			if ($choiceD[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+			echo "<script>alert(\"Friend: I think the answer is D. \\nI am ".$random2."% sure about that.\")</script>";
+			}
+			}
+		}
+		else{
+			$random2=rand(1,50);
+			if ($choiceA[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+			array_splice($choice,0,1);
+			}
+			if ($choiceB[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+			array_splice($choice,1,1);
+			}
+			if ($choiceC[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+			array_splice($choice,2,1);
+			}
+			if ($choiceD[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+			array_splice($choice,3,1);
+			}
+			$random = rand(0,count($choice)-1);
+			echo "<script>alert(\"Friend: I think the answer is ".$choice[$random].". \\nI am ".$random2."% sure about that.\")</script>";
+		}
+  ?>
+  <?php
+  if(isset($_POST['call'])){ 
+  echo "<script> alert(\"According to the statistics from the results of the voting system,\\nthe audiences think the answer would be like this.\")</script>";
+    $ans_prob = 50+rand(0,30);
+	$notans1_prob = round((100-$ans_prob)*lcg_value());
+	$notans2_prob = round((100-$ans_prob-$notans1_prob)*lcg_value());
+	$notans3_prob = 100-$ans_prob-$notans1_prob-$notans2_prob;
+	$probs = array($notans1_prob,$notans2_prob,$notans3_prob);
+      if ($choiceA[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+          echo "<script> alert(\"A: ".$choiceA[$_COOKIE[score]]." ".$ans_prob."%\")</script>";
+      }else{
+		$random3=rand(0,count($probs)-1);
+		$notanswer_prob=$probs[$random3];
+        echo "<script> alert(\"A: ".$choiceA[$_COOKIE[score]]." ".$notanswer_prob."%\")</script>";
+		array_splice($probs,$random3,1);
+      }
+      if ($choiceB[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+        echo "<script> alert(\"B: ".$choiceB[$_COOKIE[score]]." ".$ans_prob."%\")</script>";
+      }else{
+		$random3=rand(0,count($probs)-1);
+		$notanswer_prob=$probs[$random3];
+        echo "<script> alert(\"B: ".$choiceB[$_COOKIE[score]]." ".$notanswer_prob."%\")</script>";
+		array_splice($probs,$random3,1);
+      }
+      if ($choiceC[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+        echo "<script> alert(\"C: ".$choiceC[$_COOKIE[score]]." ".$ans_prob."%\")</script>";
+      }else{
+		$random3=rand(0,count($probs)-1);
+		$notanswer_prob=$probs[$random3];
+        echo "<script> alert(\"C: ".$choiceC[$_COOKIE[score]]." ".$notanswer_prob."%\")</script>";
+		array_splice($probs,$random3,1);
+      }if ($choiceD[$_COOKIE[score]]==$answer[$_COOKIE['score']]){
+        echo "<script> alert(\"D: ".$choiceD[$_COOKIE[score]]." ".$ans_prob."%\")</script>";
+      }else{
+		$random3=rand(0,count($probs)-1);
+		$notanswer_prob=$probs[$random3];
+        echo "<script> alert(\"D: ".$choiceD[$_COOKIE[score]]." ".$notanswer_prob."%\")</script>";
+		array_splice($probs,$random3,1);
+      }
+  }
+  ?>
